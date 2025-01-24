@@ -22,7 +22,7 @@ namespace S7CommPlusDllWrapper
 
         private static Type DatablockInfo_Type = S7CommPlusAssembly.GetType("S7CommPlusDriver.S7CommPlusConnection+DatablockInfo");
 
-        private static Type PlcTag_Type = S7CommPlusAssembly.GetType("S7CommPlusDriver.ClientAPI+PLCTag");
+        //private static Type PlcTag_Type = S7CommPlusAssembly.GetType("S7CommPlusDriver.ClientAPI+PLCTag");
 
         private static Type DatablockInfoList_Type = typeof(List<>).MakeGenericType(DatablockInfo_Type);
 
@@ -84,9 +84,10 @@ namespace S7CommPlusDllWrapper
             else if (command == "readVariable")
             {
 
-                System.Console.WriteLine("loading...");
+                System.Console.WriteLine("loading ...");
+                System.Console.WriteLine(input.tagSymbol);
 
-                tag = S7CommPlusConnection_Method_GetTagBySymbol.Invoke(conn, input.tagSymbol);
+                tag = S7CommPlusConnection_Method_GetTagBySymbol.Invoke(conn, new object[] { input.tagSymbol });
 
                 System.Console.WriteLine(tag);
 

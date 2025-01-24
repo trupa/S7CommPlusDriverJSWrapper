@@ -32,7 +32,7 @@ Connect({ command: "getDataBlockInfoList" }, (error, result) => {
     console.log(result);
 });
 
-Connect({ command: "readVariable", tagSymbol: "DB_FloatingPoint.Real_MinNeg_n3d402823e38"}, (error, result) => {
+Connect({ command: "readVariable", tagSymbol: "DB_FloatingPoint.Real_987d125"}, (error, result) => {
     if (error) throw error;
     console.log(result);
 });
