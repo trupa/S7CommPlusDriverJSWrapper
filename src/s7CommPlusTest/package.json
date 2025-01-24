@@ -1,0 +1,12 @@
+{
+  "name": "s7-comm-plus-test",
+  "version": "0.0.0",
+  "description": "s7CommPlusTest",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "edge-js": "^23.1.4"
+  }
+}
