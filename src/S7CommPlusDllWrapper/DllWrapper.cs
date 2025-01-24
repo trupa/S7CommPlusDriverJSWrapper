@@ -5,77 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 using S7CommPlusDriver;
 using S7CommPlusDriver.ClientApi;
-
-using System;
-using System.Threading.Tasks;
 using System.Reflection;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Runtime.InteropServices;
 
 namespace S7CommPlusDllWrapper
 {
     public class DllWrapper
     {
-        private S7CommPlusConnection conn;
-        private List<S7CommPlusConnection.DatablockInfo> dbInfoList;
 
-        public async Task<object> Connect(dynamic input)
-        {
-            if (input.command == "Connect")
-            {
-                if (conn != null) conn.Disconnect();
-                conn = new S7CommPlusConnection();
-
-                Console.WriteLine("Connecting to " + input.address);
-
-
-                return await Task.Run(() => conn.Connect(input.address, input.password));
-
-                //if(connRes != 0)
-                //{
-                //    Console.WriteLine("Error Connecting ...");
-                //    return connRes;
-                //}
-
-                //Console.WriteLine("Connected ...");
-                //Console.WriteLine(conn.SessionId2);
-                //return conn;
-            }
-            else if (input.command == "GetDBInfoList")
-            {
-                Console.WriteLine(conn.SessionId2);
-
-                int getDbRes = conn.GetListOfDatablocks(out dbInfoList);
-
-                Console.WriteLine(conn.SessionId2);
-
-                return dbInfoList;
-            }
-
-            return null;
-        }
-    }
-
-    public class DllWrapper2
-    {
-
-
-
-        private static string dllPath = @"C:\Users\cesar\Source\Repos\S7CommPlusDriver\src\S7CommPlusDriver\bin\x64\Debug\S7CommPlusDriver.dll";
+        private static string dllPath = @"..\S7CommPlusDriver\bin\x64\Debug\S7CommPlusDriver.dll";
         private static Assembly S7CommPlusAssembly = Assembly.LoadFrom(dllPath);
 
         private static Type S7CommPlusConnection_Type = S7CommPlusAssembly.GetType("S7CommPlusDriver.S7CommPlusConnection");
         private static MethodInfo S7CommPlusConnection_Method_Connect = S7CommPlusConnection_Type.GetMethod("Connect");
         private static MethodInfo S7CommPlusConnection_Method_GetListOfDatablocks = S7CommPlusConnection_Type.GetMethod("GetListOfDatablocks");
+        private static MethodInfo S7CommPlusConnection_Method_GetTagBySymbol = S7CommPlusConnection_Type.GetMethod("getPlcTagBySymbol");
 
         private static Type DatablockInfo_Type = S7CommPlusAssembly.GetType("S7CommPlusDriver.S7CommPlusConnection+DatablockInfo");
+
+        private static Type PlcTag_Type = S7CommPlusAssembly.GetType("S7CommPlusDriver.ClientAPI+PLCTag");
 
         private static Type DatablockInfoList_Type = typeof(List<>).MakeGenericType(DatablockInfo_Type);
 
         private object conn = null;
         private object dbInfoList = null;
+        private object tag = null;
 
 
         public async Task<object> Invoke(dynamic input)
@@ -127,9 +80,20 @@ namespace S7CommPlusDllWrapper
                 dbInfoList = parameters1[0];
 
                 return dbInfoList;
+            }
+            else if (command == "readVariable")
+            {
 
+                System.Console.WriteLine("loading...");
+
+                tag = S7CommPlusConnection_Method_GetTagBySymbol.Invoke(conn, input.tagSymbol);
+
+                System.Console.WriteLine(tag);
+
+                return tag;
 
             }
+
             return null;
         }
     }

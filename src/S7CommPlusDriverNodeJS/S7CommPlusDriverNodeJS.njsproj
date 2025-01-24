@@ -2,14 +2,14 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>s7CommPlusTest</Name>
-    <RootNamespace>s7CommPlusTest</RootNamespace>
+    <Name>S7CommPlusDriverNodeJS</Name>
+    <RootNamespace>S7CommPlusDriverNodeJS</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>fec92b81-b141-47b1-bc6e-2887574ec0cc</ProjectGuid>
+    <ProjectGuid>9a37f2b7-697a-4cae-855c-50495448037e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>server.js</StartupFile>
     <SearchPath>
@@ -31,9 +31,6 @@
     <Content Include="server.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="Temp.js">
-      <SubType>Code</SubType>
-    </Content>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

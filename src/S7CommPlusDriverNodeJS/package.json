@@ -1,7 +1,7 @@
 {
-  "name": "s7-comm-plus-test",
+  "name": "s7-comm-plus-driver-node-js",
   "version": "0.0.0",
-  "description": "s7CommPlusTest",
+  "description": "S7CommPlusDriverNodeJS",
   "main": "server.js",
   "author": {
     "name": ""
