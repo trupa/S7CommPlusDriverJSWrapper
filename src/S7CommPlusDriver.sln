@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33328.57
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S7CommPlusDriver", "S7CommPlusDriver\S7CommPlusDriver.csproj", "{781951D8-80DE-4E2F-92CA-A5FEF0059415}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "S7CommPlusDriverNodeJS", "S7CommPlusDriverNodeJS\S7CommPlusDriverNodeJS.njsproj", "{9A37F2B7-697A-4CAE-855C-50495448037E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S7CommPlusGUIBrowser", "S7CommPlusGUIBrowser\S7CommPlusGUIBrowser.csproj", "{BEB37276-B3B3-4DEE-A1EA-D95EB774223B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S7CommPlusDllWrapper_ConsoleTest", "S7CommPlusDllWrapper_ConsoleTest\S7CommPlusDllWrapper_ConsoleTest.csproj", "{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,18 @@ Global
 		{BEB37276-B3B3-4DEE-A1EA-D95EB774223B}.Release|x64.Build.0 = Release|x64
 		{BEB37276-B3B3-4DEE-A1EA-D95EB774223B}.Release|x86.ActiveCfg = Release|x86
 		{BEB37276-B3B3-4DEE-A1EA-D95EB774223B}.Release|x86.Build.0 = Release|x86
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Debug|x64.Build.0 = Debug|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Debug|x86.Build.0 = Debug|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Release|x64.ActiveCfg = Release|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Release|x64.Build.0 = Release|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Release|x86.ActiveCfg = Release|Any CPU
+		{21EF52B1-7F88-4D0C-B7C9-873AA2869D1B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
